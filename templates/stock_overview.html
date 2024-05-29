@@ -1,0 +1,21 @@
+{% extends 'index.html' %} {% block content%}
+<table>
+  <tr class="table-head">
+    <th class="feature">Symbol</th>
+    <th class="feature">Company Name</th>
+    <th class="feature">Market Cap</th>
+    <th class="feature">Turnover</th>
+    <th class="feature">P/E Ratio</th>
+  </tr>
+  {% for metric in metrics %}
+  <tr>
+    <td>{{metric['Symbol']}}</td>
+    <td>{{metric['Name']}}</td>
+    <td>{{metric['Market Cap']}}</td>
+    <td>{{metric['Turnover']}}</td>
+    <td>{{metric['Forward P/E']}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock content %}

@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* colors */
+  --white: #fff;
+  --primary-700: rgb(56, 56, 84);
+  --grey-800: rgb(46, 46, 72);
+  --primary-500: rgb(71, 91, 232);
+
+  /* rest of the vars */
+
+  --borderRadius-1: 0.25rem;
+  --borderRadius-2: 10px;
+  --letterSpacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  --max-width: 1120px;
+  --fixed-width: 600px;
+}
+
+body {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+section {
+  display: flex;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+h1 {
+  font-size: 3.052rem;
+  margin: 0;
+  margin-bottom: 0.75rem;
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+button {
+  cursor: pointer;
+  text-transform: capitalize;
+  font-family: inherit;
+}
+
+a {
+  cursor: pointer;
+  text-transform: capitalize;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+input,
+select {
+  padding: 0.25rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--borderRadius-2);
+  cursor: pointer;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+tr:nth-child(odd) {
+  background-color: var(--white);
+}
+
+tr:hover:not(.table-head) {
+  background-color: rgba(181, 174, 174, 0.8);
+}
+th {
+  text-transform: capitalize;
+  text-align: left;
+}
+
+td,
+th {
+  padding-block: 0.5rem;
+  padding-left: 1rem;
+}
+
+label {
+  font-family: system-ui;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.left-side-container {
+  background-color: var(--grey-800);
+  width: 230px;
+  padding-left: 2rem;
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+}
+
+.right-side-container {
+  background-color: var(--primary-700);
+  width: calc(100% - 230px);
+  /* height: inherit; */
+  min-height: 100vh;
+  padding-inline: 2rem;
+  padding-block: 2rem;
+}
+
+.btn-option {
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: var(--white);
+  border: none;
+  padding: 0.5rem;
+  text-align: left;
+  transition: var(--transition);
+  display: block;
+  border-radius: 10px;
+}
+
+.title,
+h2 {
+  color: var(--white);
+}
+
+.side-option-list {
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+  border-radius: var(--borderRadius-2);
+}
+
+.side-option-list:hover {
+  background-color: var(--primary-700);
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.parameter {
+  background-color: var(--grey-800);
+  border-radius: var(--borderRadius-1);
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+}
+
+.chart-view {
+  background-color: var(--grey-800);
+  border-radius: var(--borderRadius-1);
+  padding: 2rem;
+}
+
+.table-view {
+  background-color: var(--grey-800);
+  border-radius: var(--borderRadius-1);
+  padding-inline: 2rem;
+  padding-bottom: 2rem;
+}
+
+.info-company {
+  display: flex;
+  padding-bottom: 0.5rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info-company p,
+.currency {
+  font-family: inherit;
+  font-size: 1.2rem;
+  color: var(--white);
+}
+.currency {
+  margin-left: 1rem;
+}
+
+.form-stat {
+  display: flex;
+}
+
+.error {
+  color: red;
+}
+
+#row_number {
+  width: 60px;
+}
+
+.main-svg {
+  width: 100%;
+}
+
+.symbol {
+  margin-top: 2rem;
+}
+.metric-main-container {
+  padding-top: 2rem;
+}
+.overview,
+.historical,
+.profile {
+  background-color: var(--primary-500);
+}
+.metric-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-metric-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  width: 230px;
+  height: 160px;
+  padding-block: 1rem;
+  margin: 0 auto;
+  border-radius: 125px;
+  cursor: pointer;
+  border: 2px solid slategrey;
+  font-family: system-ui;
+  font-size: 1.5rem;
+  padding-inline: 1rem;
+}
+
+.single-metric-container:hover {
+  background-color: var(--primary-500);
+  color: var(--white);
+  transition: all ease-in-out 300ms;
+}
+
+.center-align {
+  text-align: center;
+}
+
+#hide {
+  opacity: 0;
+}

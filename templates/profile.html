@@ -1,0 +1,33 @@
+{% extends 'index.html' %} {% block content%}
+
+<div class="parameter">
+  <h2>Parameters</h2>
+  <form class="select-form" action="" method="post">
+    <label for="selector">Stock: </label>
+    <select name="form-selector"  id="selector" onchange="this.form.submit()">
+      {% for ticker in list_of_tickers%}
+      <option value="{{ticker}}" {% if ticker == selected_stock %} selected {% endif %}>{{ticker}}</option>
+      {% endfor %}
+    </select>
+  </form>
+</div>
+
+<div class="table-view">
+  <div class="info-company">
+    
+    <p class="company-description">{{company_name}}</p>
+</div>         
+<table>
+  <tr class="table-head">
+    <th class="feature">Name</th>
+    <th class="feature">Title</th>
+  </tr>
+  {% for info in company_info %}
+  <tr>
+    <td>{{info['name']}}</td>
+    <td>{{info['title']}}</td>
+  </tr>
+  {% endfor %}
+</table>
+</div>
+{% endblock content %}

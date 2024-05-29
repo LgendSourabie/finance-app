@@ -1,0 +1,26 @@
+{% extends 'index.html' %} {% block content%}
+<div class="parameter">
+    <h2>Parameters</h2>
+    <form class="select-form form-stat" action="" method="post">
+        <div>
+            <label for="selector">Stock: </label>
+            <select name="form-selector"  id="selector" onchange="this.form.submit()">
+                {% for ticker in list_of_tickers%}
+                <option value="{{ticker}}" {% if ticker == selected_stock %} selected {% endif %}>{{ticker}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <p class="currency">Currency in {% if currency %} {{currency}} {% endif %}</p>
+    </form>
+  </div>
+  <div class="table-view metric-main-container">
+      <div class="metric-container">
+          {% for key,metric in metrics.items() %}
+          <div class="single-metric-container">
+              <p class="center-align"><b>{{key}}</b></p>
+              <p class="center-align">{{metric}}</p>
+            </div>
+             {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

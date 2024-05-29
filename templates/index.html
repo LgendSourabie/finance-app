@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Overview</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <script defer src="{{url_for('static', filename='script.js')}}"></script>
+  </head>
+  <body>
+    <section>
+      <div class="left-side-container" id="left-side-container">
+        <h1 class="title symbol" id="{{ticker_show}}">{% if selected_stock %} {{selected_stock}} {% else %} AAPL {% endif %}</h1>
+        <ul id="list-option">
+          <li class="side-option-list" id="option-0"><a class="btn-option {{color_overview}}" href="/stock_overview"> stock overview</a></li>
+          <li class="side-option-list" id="option-1"><a class="btn-option {{color_historical}}" href="/historical_data"> historical data </a></li>
+          <li class="side-option-list" id="option-3"><a class="btn-option {{color_profile}}" href="/profile"> Profile </a></li>
+          <li class="side-option-list" id="option-2"><a class="btn-option {{color_statistics}}" href="/statistics"> statistics </a></li>
+        </ul>
+      </div>
+      <div class="right-side-container" id="right-side-container">
+        <h1 class="title">Finance Dashboard</h1>
+        <div class="info-section">{% block content %} {% endblock %}</div>
+      </div>
+    </section>
+  </body>
+</html>
